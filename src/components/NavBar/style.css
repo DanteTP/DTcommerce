@@ -1,0 +1,22 @@
+.nav-extended{
+    background-color: yellowgreen;
+}
+
+.logo{
+    background-color: black;
+    height: 13vh;
+    line-height: 13vh;
+}
+
+
+
+.lista{
+    display: flex;
+    justify-content: space-around;
+}
+
+.listado{
+    color: blueviolet;
+    font-size: 150%;
+    text-decoration: none;
+}
