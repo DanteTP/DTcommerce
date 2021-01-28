@@ -5,13 +5,14 @@ export default SearchBar => {
     return (
         <div>
 
-  <nav>
-    <div className="nav-wrapper">
+  
+<nav>
+    <div class="nav-wrapper">
       <form>
-        <div className="input-field">
-          <input id="search" type="search" required></input>
-          <label className="label-icon" for="search"><i className="material-icons">Buscar</i></label>
-          <i className="material-icons">close</i>
+        <div class="input-field">
+          <input id="search" type="search" style={{height:"7vh"}} required></input>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
         </div>
       </form>
     </div>
