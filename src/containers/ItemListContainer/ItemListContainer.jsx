@@ -2,7 +2,7 @@ import './style.css'
 
 const ItemListContainer = (props) =>{
     return (
-        <h1>{props.mensaje}</h1>
+        <h1>{props.greeting}</h1>
 
     )
 }
