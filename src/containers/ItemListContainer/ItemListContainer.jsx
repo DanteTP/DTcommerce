@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import ItemCount from '../../components/ItemCount'
 import { render } from '@testing-library/react'
 import { ItemList } from '../ItemList'
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
 
 const ItemListContainer = (props) =>{
 const [cart,SetCart] = useState(0)
@@ -29,7 +30,7 @@ const handlerAdd= (stock,addvalue)=>{
 return (
     <>
     <h1>{props.greeting}</h1>
-    <ItemList/>
+    <ItemDetailContainer/>
     </>)
 }
 
