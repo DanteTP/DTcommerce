@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react'
-import Item from '../../../components/Item'
+import Item from '../../components/Item'
 import CircularProgress from '@material-ui/core/CircularProgress';
 const datos = [
     {id:1,
