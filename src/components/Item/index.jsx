@@ -7,7 +7,7 @@ const Item = ({datos}) =>{
             <div class="col s12 m3 l2">
               <div class="card">
                 <div class="card-image">
-                  <img src={d.foto}></img>
+                  <img src={d.foto}/>
                   <br/><br/>
                   <a href=""><span class="card-title">{d.nombre}</span></a>
                 </div>
