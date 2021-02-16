@@ -24,7 +24,7 @@ useEffect(() => {
         // console.log(resultado);
         setDato(resultado)
         
-        // console.log(resultado.filtrado);
+        console.log(resultado);
         
         
     }
