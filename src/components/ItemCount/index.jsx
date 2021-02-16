@@ -12,20 +12,11 @@ const ItemCount = (props) =>{
 
 
     return(
-        <div>
-         <div class="row">
-        <div class="col l3">
-        <a class="btn-floating btn-large waves-effect waves-light red" onClick={() => qty>props.initial? SetQty(qty - 1):""}><i class="material-icons">-</i></a>
-        <h1>{counterValue(qty,props.initial)}</h1>
-        <a class="btn-floating btn-large waves-effect waves-light red" onClick={() => qty<props.stock? SetQty(qty + 1):""}><i class="material-icons">+</i></a>
-        </div></div>
-        <div class="row">
-        <div class="col l3">
-        <a class="waves-effect waves-light btn" onClick={()=>{props.handlerAdd(props.stock,qty)}} >Agregar</a></div>
-        </div>
-        <h2>El carrito cuenta con {props.cart} items agregados y el stock total es de {props.stock} productos.</h2>
-        
-        </div>)
+        <div className="counter">
+        <button className="boton" onClick={() => qty>props.initial? SetQty(qty - 1):""}>-</button>
+        <div className="number">{counterValue(qty,props.initial)}</div>
+        <button className="boton"onClick={() => qty<props.stock? SetQty(qty + 1):""}>+</button></div>
+    )
 }
 
 export default ItemCount

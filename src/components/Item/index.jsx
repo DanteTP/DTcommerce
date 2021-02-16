@@ -1,26 +1,26 @@
 import './style.css'
+import {NavLink} from 'react-router-dom'
 
 const Item = ({datos}) =>{
           return(  
-          datos.map((d)=>{
+            <div class="row">
+          {datos.map((d)=>{
               return(
-            <div class="col s12 m3 l2">
+          <NavLink to={`/products/${d.id}`}><div class="col s12 m3 l3">
               <div class="card">
                 <div class="card-image">
-                  <img src={d.foto}/>
+                  <img src={`/images/${d.image}`}/>
                   <br/><br/>
-                  <a href=""><span class="card-title">{d.nombre}</span></a>
+                  <a href=""><span class="card-title">{d.name}</span></a>
                 </div>
                 <div class="card-action">
-                    <p>{d.precio}</p>
+                    <p className="precio">${d.price}</p>
                 </div>
               </div>
-            </div>)
+            </div></NavLink>)
 
-            }
-            
-
-        ))
+            })}</div>
+        )
 }
 
 export default Item

@@ -7,7 +7,7 @@ img{
 }
 
 .precio {
-    background-color: brown;
+    background-color: grey;
     width: 70%;
     height: 3vh;
     border-radius: 25px;
@@ -36,6 +36,10 @@ img{
     color: black;
 }
 
+.card-image{
+    margin-left: 10%;
+}
+
 .card .card-image .card-title {
     color:black;
     bottom: 0;
@@ -43,4 +47,10 @@ img{
     max-width: 100%;
     padding: 14px;
 
+}
+
+.image {
+    height: 20vh;
+    width: 90%;
+    background-color: grey;
 }

@@ -1,0 +1,20 @@
+.MuiList-padding{
+ display: flex;
+ flex-direction: column;
+}
+
+.MuiListItem-gutters{
+  width: 100%;
+  font-size: large;
+  color: grey;
+  font-weight: bold;
+}
+
+.MuiButton-root{
+  box-shadow: none;
+  border: none;
+}
+
+.makeStyles-list-1{
+  margin-top: 50%;
+}

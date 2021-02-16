@@ -1,4 +1,8 @@
 .nav-wrapper{
     background-color: wheat;
+    width: 100%;
 }
 
+.input-field{
+    height: 1vh;
+}
