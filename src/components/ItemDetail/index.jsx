@@ -1,10 +1,20 @@
 import './style.css'
 import ItemCount from '../ItemCount'
+import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 
 
 const ItemDetail = ({datos}) => {
 
+    const[cartB,SetCartB]= useState(false)
+    const [cart,SetCart] = useState(0)
+
+    const handlerAdd= (stock,addvalue)=>{
+        if(addvalue<=(stock-cart)){SetCart(cart+addvalue) }else{return alert("ingrese una cantidad menor ya que no tenemos suficiente stock")}
+        SetCartB(true)}
+        
+        console.log({cart});
     return (
         <div>
         <div className="row">
@@ -15,11 +25,10 @@ const ItemDetail = ({datos}) => {
             <h1>{datos.name}</h1>
             <div className="price">${datos.price}</div>
             <br/><br/>
-            <div className="contador"><ItemCount initial={1} stock={2}/></div>
-            <p>stock(props)</p>
-            <button>Agregar al carrito</button><br/>
-            <button>comprar</button><br/>
-            <button>wish list</button>
+            {cartB? "" :<div className="contador"><ItemCount cart={cart} handlerAdd ={handlerAdd} cartb={cartB} initial={1} stock={6}/></div>}
+            <h3></h3>  
+            {cartB==false? "" :<NavLink to='/cart'><button className="buttondetail">Terminar mi compra</button></NavLink>}<br/>
+            <button className="buttondetail">wish list</button>
         </div></div>
         <div className="row">
         <div class="descripcion col l8 m8 s12">{datos.description}</div></div>

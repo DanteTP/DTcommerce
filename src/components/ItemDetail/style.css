@@ -34,15 +34,16 @@ img {
     width: 100%;
 }
 
-p {
+.pcount {
     color: grey;
     font-style: bold;
     border-radius: 25px;
-    border:1px solid grey
-    
+    border:1px solid grey;
+    width:60%;
+    align-self: center;
 }
 
-button {
+.buttondetail {
     background-color: indianred;
     width: 60%;
     height: 5vh;

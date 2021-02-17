@@ -28,3 +28,8 @@
 .material-icons{
     font-size: medium;
 }
+
+.stock{
+    display: flex;
+    flex-direction: column;
+}

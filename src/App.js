@@ -6,6 +6,8 @@ import ItemListContainer from './containers/ItemListContainer';
 import {BrowserRouter, Route, Switch, useParams} from 'react-router-dom'
 import ItemDetailContainer from './containers/ItemDetailContainer';
 import ItemCategory from './containers/ItemCategory';
+import ItemCartContainer from './containers/ItemCartContainer';
+
 
 
 function App() {
@@ -23,6 +25,9 @@ function App() {
          <ItemDetailContainer/></Route> 
          <Route path='/category/:CategoryID'>
          <ItemCategory />
+         </Route> 
+         <Route path='/cart'>
+         <ItemCartContainer/>
          </Route> 
         </Switch>
         </div>
