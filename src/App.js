@@ -7,14 +7,14 @@ import {BrowserRouter, Route, Switch, useParams} from 'react-router-dom'
 import ItemDetailContainer from './containers/ItemDetailContainer';
 import ItemCategory from './containers/ItemCategory';
 import ItemCartContainer from './containers/ItemCartContainer';
-
+import CartContextp from './context/cartContext';
 
 
 function App() {
-  return (
+  return ( 
     <div className="App">
       
-      
+      <CartContextp>
       <BrowserRouter>
       <NavBar/>
       <div className="container">
@@ -31,7 +31,7 @@ function App() {
          </Route> 
         </Switch>
         </div>
-      </BrowserRouter>
+      </BrowserRouter></CartContextp>
       </div>
       );
   

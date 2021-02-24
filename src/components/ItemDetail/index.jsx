@@ -2,6 +2,8 @@ import './style.css'
 import ItemCount from '../ItemCount'
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import {useContext} from 'react'
+import {CartContextp} from '../../context/cartContext'
 
 
 
@@ -9,12 +11,14 @@ const ItemDetail = ({datos}) => {
 
     const[cartB,SetCartB]= useState(false)
     const [cart,SetCart] = useState(0)
+    const { product,setProduct,onAdd}  = useContext(CartContextp)
 
     const handlerAdd= (stock,addvalue)=>{
         if(addvalue<=(stock-cart)){SetCart(cart+addvalue) }else{return alert("ingrese una cantidad menor ya que no tenemos suficiente stock")}
-        SetCartB(true)}
-        
-        console.log({cart});
+        SetCartB(true);
+        onAdd(datos,addvalue)
+    }
+    console.log(product);
     return (
         <div>
         <div className="row">
@@ -25,9 +29,9 @@ const ItemDetail = ({datos}) => {
             <h1>{datos.name}</h1>
             <div className="price">${datos.price}</div>
             <br/><br/>
-            {cartB? "" :<div className="contador"><ItemCount cart={cart} handlerAdd ={handlerAdd} cartb={cartB} initial={1} stock={6}/></div>}
-            <h3></h3>  
-            {cartB==false? "" :<NavLink to='/cart'><button className="buttondetail">Terminar mi compra</button></NavLink>}<br/>
+            <div className="contador"><ItemCount cart={cart} handlerAdd ={handlerAdd} cartb={cartB} initial={1} stock={6}/></div><br/>
+
+            {cartB==false? "" :<NavLink className="buttondetail" to='/cart'>Terminar mi compra</NavLink>}<br/>
             <button className="buttondetail">wish list</button>
         </div></div>
         <div className="row">

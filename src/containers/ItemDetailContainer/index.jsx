@@ -5,10 +5,9 @@ import datos from '../../data/products'
 import ItemDetail from '../../components/ItemDetail'
 
 const ItemDetailContainer = () =>{
-
 const [dato,setDato] = useState({})
-
 const {ProductID} = useParams()
+        
 
 useEffect(() => {
     const data = new Promise((resolve, reject) => {
@@ -23,9 +22,6 @@ useEffect(() => {
     data.then((resultado)=>{ 
         // console.log(resultado);
         setDato(resultado)
-        
-        console.log(resultado);
-        
         
     }
     )
