@@ -1,15 +1,23 @@
+
 .card {
     background-color: whitesmoke;
+    /* height: 50vh; */
+}
+
+.card-image{
+    height: 35vh;
 }
 
 img{
     width: 95%;
+    height: 27vh;
 }
 
 .precio {
     background-color: brown;
     width: 70%;
     height: 3vh;
+    line-height: 3vh;
     border-radius: 25px;
     font-size: large;
     font-weight: 900;
@@ -30,10 +38,12 @@ img{
 }
 
 .card .card-title {
-    font-size: 150%;
+    font-size: 110%;
     font-weight: bold;
     text-align: center;
     color: black;
+    height: 10vh;
+
 }
 
 .card .card-image .card-title {
@@ -41,6 +51,8 @@ img{
     bottom: 0;
     left: 0;
     max-width: 100%;
+    padding: 0px;
+
 }
 
 .card .card-image .card-title{

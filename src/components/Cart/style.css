@@ -1,0 +1,155 @@
+.cartcont{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    border-radius: 15px;
+}
+
+.cartcomprar{
+    font-size: 150%;
+    text-align: center;
+    width: 20%;
+    border-radius: 25px;
+    text-decoration: none;
+    color: black;
+    background-color: thistle;
+}
+.cfoto{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.cartitemcontrol{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+}
+.titulocart{
+    width: 100%;
+    font-size: 150%;
+    font-weight: 800;
+    display: flex;
+    justify-content: space-between;
+    text-align: start;
+}
+
+.cqty{
+    width: 40%;
+    align-self: center;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+
+.idb{
+    font-size: 120%;
+    border: none;
+    height: 4vh;
+    color: red;
+    align-self: center;
+    background-color: white;
+}
+
+.cprice{
+    width: 30%;
+    font-size: 120%;
+    border: none;
+    height: 3vh;
+    align-self: center;
+    font-weight: bold;
+}
+
+.cfoto img{
+    height: 12vh;
+    width: 60%;
+    background-color: burlywood;
+    align-self: center  ;
+}
+
+.fondocont{
+    display: flex;
+    justify-content: space-around;
+}
+
+.totalcont{
+    display: flex;
+    flex-direction: row-reverse;
+    align-content: center;
+}
+
+
+
+.carttotal{
+    text-align: right;
+    font-size: 150%;
+    font-weight: bold;
+    display: block;
+    margin-top: 0%;
+}
+
+
+.cboton{
+    background-color: wheat;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.cboton p {
+    text-align: right;
+}
+
+.cbotonc{
+    color: black;
+    background-color: wheat;
+    border-radius: 25px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 600px) {
+    .cartcont{
+        display: block;
+    }
+
+    .totalcont{
+        display: block;
+    }
+    .cqty{
+        width: 100%;
+    }
+    .idb{
+        width: 100%;
+    }
+    .cartitemcontrol{
+        display: block;
+        margin-top: -5%;
+    }
+    .carttotal{
+        align-self: center;
+    }
+    .ctotal{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .cbotonc{
+        display: flex;
+        align-content: center;
+        height: 6vh;
+        margin-top: 3%;
+    }
+
+    .cboton{
+        height: 6vh;
+        margin-top: 3%;
+    }
+}

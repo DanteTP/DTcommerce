@@ -11,12 +11,13 @@ const ItemDetail = ({datos}) => {
 
     const[cartB,SetCartB]= useState(false)
     const [cart,SetCart] = useState(0)
-    const { product,setProduct,onAdd}  = useContext(CartContextp)
+    const { product,setProduct,onAdd,totalac}  = useContext(CartContextp)
 
     const handlerAdd= (stock,addvalue)=>{
         if(addvalue<=(stock-cart)){SetCart(cart+addvalue) }else{return alert("ingrese una cantidad menor ya que no tenemos suficiente stock")}
         SetCartB(true);
         onAdd(datos,addvalue)
+        
     }
     console.log(product);
     return (

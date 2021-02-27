@@ -33,6 +33,7 @@
 
 .logop{
     width: 70%;
+    height: 15vh;
 }
 
 .lista{
@@ -50,6 +51,7 @@
     background-color: yellowgreen;
     display: flex;
     align-items: center;
+    height: 20vh;
 }
 
 .cartlogin{
@@ -70,6 +72,7 @@
     .header {
         display: block;
         background-color: yellowgreen;
+        height: 30vh;
     }
 
     .logop{

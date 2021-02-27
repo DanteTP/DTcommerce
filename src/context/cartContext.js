@@ -12,15 +12,33 @@ function McartContext({children}) {
        return (product.findIndex(p=>p.item.id==value.id)<0?false:true)
     }
 
+    let totalac = (value) =>{
+            if(value.length>0){
+                return (value.reduce((acc,cv)=>acc+cv.quantity,0))
+            } else {return 0}
+    }
+
+
     let onAdd = (value,qty)=> {
         if(!isinCart(value)){
-            setProduct([...product,{item:value,quantity:qty}])
+            setProduct([...product,{item:value,quantity:qty,total:value.price*qty}])
         }else{
             let nprod = product.map(p=>{
-                return (p.item.id==value.id? {item:p.item, quantity:p.quantity+qty}:p)
+                return (p.item.id==value.id? {item:p.item, quantity:p.quantity+qty, total:p.item.price*(p.quantity+qty)}:p)
                 })
             setProduct(nprod)
         }
+    }
+    
+    let onSus = (value) =>{
+        let nprod = product.map(p=>{
+            return (p.item.id==value.id? {item:p.item, quantity:p.quantity-1, total:p.item.price*(p.quantity-1)}:p)
+            })
+        setProduct(nprod)
+    }
+
+    let Gtotal = () =>{
+       return product.reduce((acc,cv)=>acc+cv.total,0)
     }
 
     const clear = () =>{
@@ -35,7 +53,7 @@ function McartContext({children}) {
 
     return (
         <div>
-            <CartContextp.Provider value={{product,setProduct,onAdd,clear,removeItem
+            <CartContextp.Provider value={{product,setProduct,onAdd,clear,removeItem,totalac,Gtotal,onSus
             }}>
                 {children}
             </CartContextp.Provider>

@@ -23,8 +23,9 @@ img {
 .price{
         color: white;
         background-color: tomato;
-        height: 3vh;
-        font-size: 150%;
+        height: 4vh;
+        line-height: 4vh;
+        font-size: 110%;
         font-weight: bold;
         width: 40%;
         border-radius: 25px;
