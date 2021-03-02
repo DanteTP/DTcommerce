@@ -5,8 +5,11 @@ export const CartContextp = createContext()
 
 
 function McartContext({children}) {
-
-    const [product, setProduct] = useState([])
+    let carrito = JSON.parse(localStorage.getItem('cart'))
+    let initialcart = (value)=>{
+        return (value? value :[])
+    }
+    const [product, setProduct] = useState(initialcart(carrito))
     
     let isinCart = (value)=>{
        return (product.findIndex(p=>p.item.id==value.id)<0?false:true)
@@ -42,14 +45,20 @@ function McartContext({children}) {
     }
 
     const clear = () =>{
-       return  (setProduct([]))
+       setProduct([])
+       localStorage.clear();
     }
 
     const removeItem = (value) =>{
         let ncart = product.filter( p => p.item.id !== value.id )  
-        return (
-            setProduct(ncart))
+            setProduct(ncart)
     }
+    
+    const initialcontrol = ()=>{
+    if(product.length>0){
+       return localStorage.setItem('cart',JSON.stringify(product))}else{return ""}}
+    
+    initialcontrol()
 
     return (
         <div>

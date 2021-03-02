@@ -1,5 +1,7 @@
 import './style.css'
 import React, { useState } from 'react'
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 
 const CardCount = (props) =>{
@@ -14,10 +16,10 @@ const CardCount = (props) =>{
     return(
         <>
         <div className="counter">
-        <button className="boton" onClick={() => qty>props.initial? SetQty(qty - 1):""}>-</button>
+        {!props.filter(props.prod.id)?<><button className="boton" onClick={() => qty>props.initial? SetQty(qty - 1):""}>-</button>
         <div className="number">{counterValue(qty,props.initial)}</div>
-        <button className="boton"onClick={() => qty<props.stock? SetQty(qty + 1):""}>+</button></div>
-        <button className="cardbutton" onClick={()=> props.handlerAdd(props.stock,qty)}>Agregar al carrito</button>
+        <button className="boton"onClick={() => qty<props.stock? SetQty(qty + 1):""}>+</button></>:null}</div>
+        {!props.filter(props.prod.id)?<button className="cardbutton" onClick={()=> props.handlerAdd(props.prod,qty)}><AddShoppingCartIcon/></button>:<button className="cardbuttonadd"><ShoppingCartIcon/></button>}
         </>
     )
 }

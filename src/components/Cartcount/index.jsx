@@ -25,7 +25,6 @@ const Cartcount = (props) =>{
         <button className="boton" onClick={() => props.initial>1? rest(qty,props.prod):""}>-</button>
         <div className="number">{counterValue(qty,props.initial)}</div>
         <button className="boton"onClick={() => qty<props.stock? sum(qty,props.prod):""}>+</button></div>
-        {/* <button className="cardbutton" onClick={()=> props.handlerAdd(props.stock,qty)}>Agregar al carrito</button> */}
         </>
     )
 

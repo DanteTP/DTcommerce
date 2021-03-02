@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react'
 import Item from '../../components/Item'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import datos from '../../data/products'
+import {getFirestore} from '../../firebase'
 
 
 
@@ -10,33 +11,23 @@ import datos from '../../data/products'
  const ItemList = () => {
 
     const [home, setHome] = useState([])
+    const [loading, setloading] = useState(true)
 
     useEffect(() => {
-        const data = new Promise((resolve, reject) => {
-            
-            setTimeout(() => {
-    
-               resolve(datos)
-         
-            }, 2000); 
+
+        const db = getFirestore()
+        const products = db.collection('Productos')
+        products.get().then((data)=>{
+            let dato = data.docs.map(element=> element.data())
+            setHome(dato)
+            setloading(false)
         })
-        data.then((resultado)=>{ 
-            // console.log(resultado);
-            setHome(resultado)
-            
-            // console.log(resultado.filtrado);
-            
-            
-        }
-        )
+        setloading(true)
     }, [])
-        if (home.length==0) {
+        if (loading) {
             return(
                 <CircularProgress />)       }else {
             return(
-            // <div className="row">
-            //     <Item datos={state}/>
-            // </div>
             <div class="container">
             <Item datos={home}/></div>
             )

@@ -1,18 +1,34 @@
-
-.card {
+.cardcontainer:hover{
     background-color: whitesmoke;
-    /* height: 50vh; */
+    box-shadow: 4px 2px 8px 2px grey;
+    transform: scale(1.05);
 }
 
-.card-image{
-    height: 35vh;
+
+.cardcontainer {
+    background-color: whitesmoke;
+    margin-bottom: 10%;
+    height: 53vh;
 }
 
-img{
+.imagecontainer{
+    height: 38vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.image{
     width: 95%;
     height: 27vh;
 }
 
+.cardtitle{
+    font-size: 150%;
+    color: brown;
+    font-weight: bold;
+}
 .precio {
     background-color: brown;
     width: 70%;
@@ -24,7 +40,7 @@ img{
     color: white;
 }
 
-.card .card-action {
+.pricecontainer {
     padding: 0px;
     border-top: 1px solid #e0e0e0;
     display: flex;
@@ -32,29 +48,14 @@ img{
     justify-content: center;
 }
 
-.card-action{
-    padding-bottom: 15px;
-    padding-top: 0px;
-}
+@media (max-width: 900px) {
 
-.card .card-title {
-    font-size: 110%;
+}
+@media (max-width: 700px) {
+
+.cardtitle{
+    font-size: 120%;
+    color: brown;
     font-weight: bold;
-    text-align: center;
-    color: black;
-    height: 10vh;
-
-}
-
-.card .card-image .card-title {
-    color:black;
-    bottom: 0;
-    left: 0;
-    max-width: 100%;
-    padding: 0px;
-
-}
-
-.card .card-image .card-title{
-    position: relative;
-}
+    height: 5vh;
+}}

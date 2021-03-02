@@ -36,13 +36,28 @@
 
 .cardbutton{
     background-color: blue ;
-    font-size: 150%;
+    font-size: 70%;
     border-radius: 25px;
     width: 100%;
     color: white;
     border: 1px none black;
     margin-top: 5%;
     height: 4vh;
+}
+
+.cardbuttonadd{
+    background-color: grey ;
+    font-size: 70%;
+    border-radius: 25px;
+    width: 100%;
+    color: white;
+    border: 1px none black;
+    margin-top: 5%;
+    height: 4vh;
+}
+
+button:focus{
+    background-color: grey;
 }
 
 @media (max-width: 800px) {

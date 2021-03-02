@@ -3,42 +3,59 @@ import {useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import datos from '../../data/products'
 import Item from '../../components/Item'
+import PageNotFound from '../../components/PageNotFound'
+import CircularProgress from '@material-ui/core/CircularProgress';
+import {getFirestore} from '../../firebase'
+
 
 const ItemCategory = () =>{
 
 const [cartas,setCartas] = useState([])
-
+const [loading, setloading] = useState(true)
 const {CategoryID} = useParams()
 
 useEffect(() => {
-    const data = new Promise((resolve, reject) => {
-        
-        setTimeout(() => {
-            let filtrado = datos.filter((v)=>{
-            return  v.category == CategoryID})
+    if(CategoryID=="Todos los productos"){
+        const db = getFirestore()
+        const products = db.collection('Productos')
+        products.get().then((data)=>{
+            let dato = data.docs.map(element=> element.data())
+            setCartas(dato)
+            setloading(false)
+        })
+    }else{
+    const db = getFirestore()
+    const products = db.collection('Productos')
+    products.where("category", "==",CategoryID).get()
+    .then((data)=>{
+        let dato = data.docs.map(element=> element.data())
+            setCartas(dato)
+            setloading(false)
+    })}
+    setloading(true)
 
-           resolve(filtrado)
-     
-        }, 2000); 
-    })
-    data.then((resultado)=>{ 
-        // console.log(resultado);
-        setCartas(resultado)
+    // const data = new Promise((resolve, reject) => {
         
-        // console.log(resultado.filtrado);
-        
-        
-    }
-    )
-}, [CategoryID])
-    // if (state.length==0) {
-        // return(
-        //     <CircularProgress />)        }else {
+    //     setTimeout(() => {
+    //         let filtrado = datos.filter((v)=>{
+    //         return  v.category == CategoryID})
+    //        resolve(filtrado)
+    //     }, 2000); 
+    // })
+    // data.then((resultado)=>{ 
+    //     setCartas(resultado)
+    //     setloading(false)
+    // }
+    // )
+    // setloading(true)
+},[CategoryID])
+        if (loading==true) {
+        return(
+          <CircularProgress/>)        }else {
         return(
         <div className="container">
-        <Item datos={cartas}/>
-
+        {cartas.length==0?<PageNotFound/>:<Item datos={cartas}/>}
         </div>    
         )
-    }
+    }}
 export default ItemCategory

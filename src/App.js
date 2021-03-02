@@ -8,7 +8,7 @@ import ItemDetailContainer from './containers/ItemDetailContainer';
 import ItemCategory from './containers/ItemCategory';
 import ItemCartContainer from './containers/ItemCartContainer';
 import CartContextp from './context/cartContext';
-
+import PageNotFound from './components/PageNotFound'
 
 function App() {
   return ( 
@@ -21,7 +21,7 @@ function App() {
       <Switch>
           <Route exact path='/'>
           <ItemListContainer greeting={"Bienvenidos a DTCOMMERCE!!"} position="home"/></Route> 
-          <Route path='/products/:ProductID' >
+          <Route path='/products/:ProductID'>
          <ItemDetailContainer/></Route> 
          <Route path='/category/:CategoryID'>
          <ItemCategory />
@@ -29,6 +29,7 @@ function App() {
          <Route path='/cart'>
          <ItemCartContainer/>
          </Route> 
+         <Route component={PageNotFound}/>
         </Switch>
         </div>
       </BrowserRouter></CartContextp>

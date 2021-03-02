@@ -17,7 +17,7 @@ const ItemCount = (props) =>{
         <button className="boton" onClick={() => qty>props.initial? SetQty(qty - 1):""}>-</button>
         <div className="number">{counterValue(qty,props.initial)}</div>
         <button className="boton"onClick={() => qty<props.stock? SetQty(qty + 1):""}>+</button></div>
-        <div className="stock"><p className="pcount">Stock disponible: {props.stock-props.cart}</p></div>
+        <div className="stock"><p className="pcount">Stock: {props.stock-props.cart}</p></div>
         <button className="buttondetail" onClick={()=> props.handlerAdd(props.stock,qty)}>Agregar al carrito</button>
         </>
     )
