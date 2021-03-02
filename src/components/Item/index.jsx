@@ -20,9 +20,6 @@ const Item = ({datos}) =>{
           return (
           product.some((p)=>p.item.id==value))
       }
-      let prueb=document.getElementById('prueba')
-      console.log(prueb);
-
           return(  
             <div class="row">
           {datos.map((d)=>{

@@ -14,7 +14,6 @@ import {getFirestore} from '../../firebase'
     const [loading, setloading] = useState(true)
 
     useEffect(() => {
-
         const db = getFirestore()
         const products = db.collection('Productos')
         products.get().then((data)=>{

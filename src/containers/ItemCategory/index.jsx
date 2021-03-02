@@ -33,21 +33,6 @@ useEffect(() => {
             setloading(false)
     })}
     setloading(true)
-
-    // const data = new Promise((resolve, reject) => {
-        
-    //     setTimeout(() => {
-    //         let filtrado = datos.filter((v)=>{
-    //         return  v.category == CategoryID})
-    //        resolve(filtrado)
-    //     }, 2000); 
-    // })
-    // data.then((resultado)=>{ 
-    //     setCartas(resultado)
-    //     setloading(false)
-    // }
-    // )
-    // setloading(true)
 },[CategoryID])
         if (loading==true) {
         return(
