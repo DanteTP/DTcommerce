@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import MenuIcon from '@material-ui/icons/Menu';
 import {useState} from 'react'
@@ -22,7 +21,7 @@ const useStyles = makeStyles({
 });
 
 export default function TemporaryDrawer() {
-  const [category, setCategory] = useState(['oferta','visitados recientemente','Todos los productos'])
+  const [category] = useState(['oferta','visitados recientemente','Todos los productos'])
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,

@@ -1,22 +1,23 @@
 import './style.css'
 import { NavLink } from 'react-router-dom'
-import {useContext} from 'react'
-import {CartContextp} from '../../context/cartContext'
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import Cartcount from '../Cartcount';
+import {useState} from 'react'
+import Checkoutdata from '../Checkoutdata';
 
-const Cart = () => {
-    const { product,setProduct,onAdd,onSus,removeItem,clear,Gtotal}  = useContext(CartContextp)
-
-    let handlerAdd= (addvalue,datos)=>{
-           return onAdd(datos,addvalue) 
+const Cart = ({product,removeItem,Gtotal,clear,onAdd,onSus}) => {
+       const [order, setorder] = useState(false)
+       console.log('cart');
+       let handlerAdd= (addvalue,datos)=>{
+              return onAdd(datos,addvalue) 
+       }
+       
+       let handlerSus= (susvalue)=>{
+           return onSus(susvalue) 
     }
-    
-    let handlerSus= (susvalue)=>{
-        return onSus(susvalue) 
- }
+
         return(<>
-        {product.length==0?<h1>Carrito vacío</h1>:
+        {product.length===0?<h1>Carrito vacío</h1>:
         <><h1>Bienvenido a tu carrito de compras</h1>
         {product.map((p)=> <>       
         <div className='row cartcont'>
@@ -30,12 +31,12 @@ const Cart = () => {
                 <button onClick={()=>removeItem(p.item)} className='idb'><HighlightOffIcon/></button>
                </div></div>
         </div><hr/></>)}</>}
-        {product.length>0?<div className="row totalcont">
+        {product.length>0?<>{!order?<div className="row totalcont">
         <div className='col s12 l2 m2 s12 ctotal'><p className="carttotal">${Gtotal()}</p></div>
-        <button className='col s4 l2 m2 s12 cboton'>FINALIZAR</button>
+        <button className='col s4 l2 m2 s12 cboton' onClick={()=>setorder(true)}>FINALIZAR</button>
         <NavLink to='/' className='col s4 l2 m2 s12 cbotonc'><p>SEGUIR COMPRANDO</p></NavLink>
         <button onClick={()=>clear()} className='col s4 l2 m2 s12 cboton'>VACIAR CARRITO</button>
-        </div>:<NavLink to='/'><div className="row cartcomprar">Comprar</div></NavLink>}
+        </div>:<Checkoutdata/>}</>:<NavLink to='/'><div className="row cartcomprar">Comprar</div></NavLink>}
         </>)
     
 }

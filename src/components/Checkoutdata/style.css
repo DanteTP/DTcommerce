@@ -1,0 +1,25 @@
+.checkout{
+    margin-top: 10%;
+    background-color: black;
+}
+
+.container{ 
+    background-color: red;
+}
+
+.formdata{
+    background-color: blue;
+    align-self: center;
+}
+
+.salidabotones{
+    display: flex;
+    align-content: flex-end;
+    flex-direction: column;
+    height: 35vh;
+    }
+
+.checkouterror{
+    text-align: left;
+    color: red;
+}

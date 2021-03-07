@@ -69,12 +69,15 @@
 .image-gallery{
     height: 50vh;
 }
-
+.image-gallery-thumbnail-image{
+    height: 11vh;
+}
 
 
 .image-gallery-image{
-    height: 40vh;
+    height: 36vh;
 }
+
 
 @media screen and (max-width: 991px) and (min-width: 601px)  {
     .fotos{

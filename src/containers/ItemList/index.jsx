@@ -1,36 +1,21 @@
-import React, { useState,useEffect } from 'react'
+import React, {useState,useEffect } from 'react'
 import Item from '../../components/Item'
-import CircularProgress from '@material-ui/core/CircularProgress';
-import datos from '../../data/products'
-import {getFirestore} from '../../firebase'
-
+// import CircularProgress from '@material-ui/core/CircularProgress';
+import {useContext} from 'react'
+import {ProdContext} from '../../context/productContext'
+import {CartContextp} from '../../context/cartContext'
 
 
 
 
  const ItemList = () => {
-
-    const [home, setHome] = useState([])
-    const [loading, setloading] = useState(true)
-
-    useEffect(() => {
-        const db = getFirestore()
-        const products = db.collection('Productos')
-        products.get().then((data)=>{
-            let dato = data.docs.map(element=> element.data())
-            setHome(dato)
-            setloading(false)
-        })
-        setloading(true)
-    }, [])
-        if (loading) {
+    const {productos}  = useContext(ProdContext)
+    const { product,onAdd}  = useContext(CartContextp)
             return(
-                <CircularProgress />)       }else {
-            return(
-            <div class="container">
-            <Item datos={home}/></div>
+            <div className="container">
+            <Item datos={productos} onAdd={onAdd} product={product}/></div>
             )
-        }}
+        }
         
     
         export default ItemList

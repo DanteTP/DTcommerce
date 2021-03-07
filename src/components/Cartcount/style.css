@@ -6,14 +6,19 @@
     margin-left: 10%;
 }
 
-.boton{
+.cartbutton{
     background-color: yellowgreen;
-    width: 10%;
-    height: 3vh;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 3vh;
-    border: 1px solid grey;
+    height: 2.5em;
+    width: 2.5em;
+    border-radius: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pcardbutton{
+    color: white;
+    font-size: 300%;
 }
 
 .number{
@@ -25,37 +30,11 @@
     line-height: 4vh;
 }
 
-.material-icons{
-    font-size: medium;
-}
-
 .stock{
     display: flex;
     flex-direction: column;
 }
 
-.cardbutton{
-    background-color: blue ;
-    font-size: 150%;
-    border-radius: 25px;
-    width: 100%;
-    color: white;
-    border: 1px none black;
-    margin-top: 5%;
-    height: 4vh;
-}
 
-@media (max-width: 800px) {
 
-    .cardbutton{
-        background-color: blue ;
-        font-size: 150%;
-        border-radius: 25px;
-        /* width: 100%; */
-        color: white;
-        border: 1px none black;
-        margin-top: 5%;
-    }
-    
-}
 

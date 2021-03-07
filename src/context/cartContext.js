@@ -5,6 +5,7 @@ export const CartContextp = createContext()
 
 
 function McartContext({children}) {
+    console.log('cartcontext');
     let carrito = JSON.parse(localStorage.getItem('cart'))
     let initialcart = (value)=>{
         return (value? value :[])

@@ -6,9 +6,6 @@ import ItemDetailContainer from '../ItemDetailContainer'
 
 
 const ItemListContainer = (props) =>{
-    
-
-
       
         if (props.position=="home") {
             return(

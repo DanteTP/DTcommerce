@@ -6,16 +6,6 @@
     margin-left: 10%;
 }
 
-.boton{
-    background-color: yellowgreen;
-    width: 10%;
-    height: 3vh;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 3vh;
-    border: 1px solid grey;
-}
-
 .number{
     width: 50%;
     background-color: ivory;
@@ -25,11 +15,18 @@
     line-height: 4vh;
 }
 
-.material-icons{
-    font-size: medium;
-}
-
 .stock{
     display: flex;
     flex-direction: column;
+}
+
+.cardbutton{
+    background-color: blue ;
+    font-size: 70%;
+    border-radius: 25px;
+    width: 100%;
+    color: white;
+    border: 1px none black;
+    margin-top: 5%;
+    height: 4vh;
 }

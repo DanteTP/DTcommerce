@@ -7,12 +7,12 @@ export default SearchBar => {
 
   
 <nav>
-    <div class="nav-wrapper">
+    <div className="nav-wrapper">
       <form>
-        <div class="input-field">
+        <div className="input-field">
           <input id="search" type="search"  placeholder="Buscar" required></input>
-          <label class="label-icon" for="search" ><i class="material-icons"></i></label>
-          <i class="material-icons">X</i>
+          <label className="label-icon" for="search" ><i className="material-icons"></i></label>
+          <i className="material-icons">X</i>
         </div>
       </form>
     </div>
