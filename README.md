@@ -33,3 +33,12 @@ Buscamos quienes amen a los animales tanto como nosotros, por eso tenemos todo l
 :heavy_check_mark: Reserva online para asistencia médica :hospital:
 
 :heavy_check_mark: Asistencia médica online mediante videllamada :hospital:
+
+## Librerías externas utilizadas
+
+Se utilizó la siguiente librería externa a fin de facilitar la implementación de una carrusel de fotos para detalle de los productos y el banner inicial en el home. Este recurso podría haberse logrado utilizando hooks pero el resultado habría tomado mayor tiempo del disponible y problablemente el resultado no hubiera tenido la misma calidad final.
+
+https://github.com/xiaolin/react-image-gallery
+
+Adicionalmente se utilizaron materialize y react icon para iconos, badges y estructura general de la página.
+

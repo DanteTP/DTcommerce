@@ -21,7 +21,7 @@ const useStyles = makeStyles({
 });
 
 export default function TemporaryDrawer() {
-  const [category] = useState(['oferta','visitados recientemente','Todos los productos'])
+  const [category] = useState(['Perros','Gatos','Accesorios','Todos los productos'])
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,
@@ -35,8 +35,8 @@ export default function TemporaryDrawer() {
     setState({ ...state, [anchor]: open });
   };
 
-  const menu = category.map(element=>
-     <NavLink to={`/category/${element}`}> <ListItem>{element} </ListItem></NavLink>
+  const menu = category.map((element,i)=>
+     <NavLink key={i} to={`/category/${element}`}> <ListItem>{element} </ListItem></NavLink>
   )
 
   const list = (anchor) => (

@@ -9,13 +9,13 @@ import CartWidget from '../../components/CartWidget';
 
 
 const NavBar = () => {
-    console.log('nav');
+
     return (
         <div className="header row" >
         <div className="col m4 s12 l3 logo">
           <NavLink to='/'><img className="logop" src="/images/logoweb2.png" alt=""/></NavLink>
           <div className="burger"><BurgerMenu/></div>
-          <div className="carts"><CartWidget/></div>
+          <div className=".hide-on-med-and-up carts"><CartWidget/></div>
           </div>
         <div className="col m5 s12 l5 search" >
           <div className="busq"><SearchBar/></div>

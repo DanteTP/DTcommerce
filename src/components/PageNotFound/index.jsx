@@ -2,7 +2,7 @@
 
 const PageNotFound = () =>{
     return(
-        <h1>Página no encontrada</h1>
+        <h1>Producto o página no disponible</h1>
     )
 }
 

@@ -6,20 +6,23 @@ export const ProdContext = createContext()
 
 
 function MProdContext({children}) {
-        console.log('prdocontext');
 
     const [productos, setProductos] = useState([])
+    const [indexprod, setindexprod] = useState([])
        useEffect(() => {
         const db = getFirestore()
         const products = db.collection('Productos')
         products.get().then((data)=>{
             let dato = data.docs.map(element=> element.data())
             setProductos(dato)
+            let index = dato.filter(p=>p.status==='offer')
+            setindexprod(index.sort((a,b)=>{return b.disscount-a.disscount}).splice(0,4))
         })
        }, [])        
+       
     return (
         <div>
-            <ProdContext.Provider value={{productos}}>
+            <ProdContext.Provider value={{productos,indexprod}}>
                 {children} 
             </ProdContext.Provider>
         </div>

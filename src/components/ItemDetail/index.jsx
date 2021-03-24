@@ -1,49 +1,16 @@
 import './style.css'
-import { NavLink } from 'react-router-dom'
 import ItemCount from '../ItemCount'
 import "../../../node_modules/react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from '../../../node_modules/react-image-gallery';
 
 const ItemDetail = ({datos}) => {
-  console.log('itemdetail');
-    const images = [
-        {
-          original: `/images/${datos.image}`,
-          thumbnail: `/images/${datos.image}`,
-        },
-        {
-          original: `/images/${datos.image}`,
-          thumbnail: `/images/${datos.image}`,
-        },
-        {
-          original: `/images/${datos.image}`,
-          thumbnail: `/images/${datos.image}`,
-        },
-        {
-          original: `/images/${datos.image}`,
-          thumbnail: `/images/${datos.image}`,
-        },
-        {
-          original: `/images/${datos.image}`,
-          thumbnail: `/images/${datos.image}`,
-        },
-        {
-          original: `/images/${datos.image}`,
-          thumbnail: `/images/${datos.image}`,
-        },
-        {
-          original: `/images/${datos.image}`,
-          thumbnail: `/images/${datos.image}`,
-        },
-        {
-          original: `/images/${datos.image}`,
-          thumbnail: `/images/${datos.image}`,
-        },
-        {
-          original: `/images/${datos.image}`,
-          thumbnail: `/images/${datos.image}`,
-        }
-      ];
+    const images = datos.image.map((photo)=>{
+      return(
+      {
+        original: `/images/${photo}`,
+        thumbnail: `/images/${photo}`,
+      })})
+      
     return (
         <div>
         <div className="row">
@@ -55,7 +22,6 @@ const ItemDetail = ({datos}) => {
             <div className="price">${datos.price}</div>
             <br/><br/>
             <div className="contador"><ItemCount screen={'detail'} prod={datos} initial={1} stock={datos.stock}/></div><br/>
-            <NavLink className="buttondetail" to='/cart'>Comprar</NavLink><br/>
             <button className="buttondetail">wish list</button>
         </div></div>
         <div className="row">

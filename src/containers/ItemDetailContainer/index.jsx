@@ -12,7 +12,6 @@ const [dato,setDato] = useState()
 const {ProductID} = useParams()
 const [loading, setloading] = useState(true)
 const {productos}  = useContext(ProdContext)
-console.log('detailcontainer');
 
 useEffect(() => {
     const data = new Promise((resolve,reject)=>{

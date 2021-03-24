@@ -21,7 +21,7 @@
 }
 
 .cardbutton{
-    background-color: blue ;
+    background-color: indianred;
     font-size: 70%;
     border-radius: 25px;
     width: 100%;
@@ -29,4 +29,30 @@
     border: 1px none black;
     margin-top: 5%;
     height: 4vh;
+}
+
+.buttondetail {
+    text-decoration: none;
+    color: black;
+    line-height: 5vh;
+    background-color: indianred;
+    width: 100%;
+    height: 5vh;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 2px 2px grey;
+    margin-top: 3%;
+}
+
+.buttondetaild {
+    text-decoration: none;
+    color: black;
+    line-height: 5vh;
+    background-color: indianred;
+    width: 100%;
+    height: 5vh;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 2px 2px grey;
+    margin-top: 10%;
 }

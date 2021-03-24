@@ -1,15 +1,11 @@
-.checkout{
-    margin-top: 10%;
-    background-color: black;
-}
 
-.container{ 
-    background-color: red;
-}
+
 
 .formdata{
-    background-color: blue;
     align-self: center;
+    background-color: whitesmoke;
+    color: black;
+    font-weight: bold;
 }
 
 .salidabotones{
@@ -22,4 +18,20 @@
 .checkouterror{
     text-align: left;
     color: red;
+}
+
+input[type=text]:focus{
+    background-color: white;
+}
+.buttondetail {
+    text-decoration: none;
+    color: black;
+    line-height: 5vh;
+    background-color: indianred;
+    width: 100%;
+    height: 5vh;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 2px 2px grey;
+    margin-top: 3%;
 }

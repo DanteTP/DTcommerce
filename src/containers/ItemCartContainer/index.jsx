@@ -1,17 +1,15 @@
 import './style.css'
-import React, { useState, useEffect } from 'react'
 import Cart from '../../components/Cart'
-import {useContext} from 'react'
-import {CartContextp} from '../../context/cartContext'
+import CartMenu from '../../components/CartMenu'
+import Order from '../../components/Order'
 
 
-const ItemCartContainer = ({greeting}) =>{
-    const { product,onAdd,onSus,removeItem,clear,Gtotal}  = useContext(CartContextp)
-
-
+const ItemCartContainer = (cart) =>{
     return (
         <div className='container'>
-       <Cart product={product} removeItem={removeItem} Gtotal={Gtotal} clear={clear} onSus={onSus} greeting={greeting} onAdd={onAdd}/></div>
+       {cart?<><Cart/>
+       <CartMenu/></>:<Order/>}
+       </div>
     )
 
 }

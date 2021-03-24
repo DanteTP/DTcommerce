@@ -12,6 +12,9 @@
 }
 
 
+.datacontainer{
+    text-align: left;
+}
 
 .cartitemcontrol{
     display: flex;

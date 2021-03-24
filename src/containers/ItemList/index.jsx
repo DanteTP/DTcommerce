@@ -9,11 +9,11 @@ import {CartContextp} from '../../context/cartContext'
 
 
  const ItemList = () => {
-    const {productos}  = useContext(ProdContext)
+    const {productos,indexprod}  = useContext(ProdContext)
     const { product,onAdd}  = useContext(CartContextp)
             return(
             <div className="container">
-            <Item datos={productos} onAdd={onAdd} product={product}/></div>
+            <Item datos={indexprod} onAdd={onAdd} product={product}/></div>
             )
         }
         
